@@ -38,3 +38,30 @@ domain/models に Employee, Timesheet, AttendanceEntry, BreakInterval のクラ�
   各モデルは仕様書の不変条件を守り、不正な値が入った場合は適切な例外を投げるようになっています
 ```
 
+## Repository Interface
+
+```
+domain/repositories に TimesheetRepository, OvertimeRequestRepository, LeaveRequestRepository の抽象クラスを定義してください。
+仕様書のメソッドシグネチャを Python の抽象基底クラス（ABC）で表現してください。
+```
+
+```
+ 完成しました。仕様書に従って、以下の抽象リポジトリクラスを実装しました：
+
+  1. TimesheetRepository (timesheet_repository.py):
+    - find_by(employee_id, year_month): 従業員IDと年月でタイムシートを検索
+    - save(timesheet): タイムシートを保存/更新
+  2. OvertimeRequestRepository (overtime_request_repository.py):
+    - find_by_id(request_id): リクエストIDで残業申請を検索
+    - save(request): 残業申請を保存/更新
+    - list_by_employee(employee_id, status?): 従業員IDとステータスで一覧取得
+    - list_for_approver(approver_id, status?): 承認者向けの一覧取得
+  3. LeaveRequestRepository (leave_request_repository.py):
+    - find_by_id(request_id): リクエストIDで休暇申請を検索
+    - save(request): 休暇申請を保存/更新
+    - list_by_employee(employee_id, status?): 従業員IDとステータスで一覧取得
+    - list_for_approver(approver_id, status?): 承認者向けの一覧取得
+
+  また、OvertimeRequestとLeaveRequestのモデルクラスも作成し、申請の承認/却下機能を実装しました
+  。すべてPythonのABC（Abstract Base Class）を使用して、抽象メソッドとして定義しています。
+```

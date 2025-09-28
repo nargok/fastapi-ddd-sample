@@ -18,6 +18,8 @@ from .break_interval import BreakInterval
 from .employee import Employee
 from .attendance_entry import AttendanceEntry
 from .timesheet import Timesheet
+from .overtime_request import OvertimeRequest
+from .leave_request import LeaveRequest
 
 __all__ = [
     "EmployeeId",
@@ -38,4 +40,6 @@ __all__ = [
     "Employee",
     "AttendanceEntry",
     "Timesheet",
+    "OvertimeRequest",
+    "LeaveRequest",
 ]
