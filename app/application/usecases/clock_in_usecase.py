@@ -30,8 +30,9 @@ class ClockInUseCase:
             timesheet = self.timesheet_repository.find_by(employee_id, year_month)
 
             if not timesheet:
+                import uuid
                 timesheet = Timesheet(
-                    timesheet_id=TimesheetId(""),
+                    timesheet_id=TimesheetId(str(uuid.uuid4())),
                     employee_id=employee_id,
                     year_month=year_month
                 )

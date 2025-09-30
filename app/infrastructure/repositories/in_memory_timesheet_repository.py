@@ -17,4 +17,4 @@ class InMemoryTimesheetRepository(TimesheetRepository):
 
     def _create_key(self, employee_id: EmployeeId, year_month: YearMonth) -> Tuple[str, str]:
         year_month_str = f"{year_month.year:04d}-{year_month.month:02d}"
-        return (employee_id.value, year_month_str)
+        return (employee_id, year_month_str)
