@@ -34,3 +34,36 @@ class ClockOutResponse:
     clock_out_time: str
     current_state: str
     worked_minutes: Optional[int] = None
+
+
+@dataclass
+class StartBreakRequest:
+    employee_id: str
+    break_start_time: datetime
+
+
+@dataclass
+class StartBreakResponse:
+    success: bool
+    message: str
+    employee_id: str
+    date: str
+    break_start_time: str
+    current_state: str
+
+
+@dataclass
+class EndBreakRequest:
+    employee_id: str
+    break_end_time: datetime
+
+
+@dataclass
+class EndBreakResponse:
+    success: bool
+    message: str
+    employee_id: str
+    date: str
+    break_end_time: str
+    current_state: str
+    break_duration_minutes: Optional[int] = None
